@@ -76,4 +76,5 @@ public interface CustomerRepository
             " c group by c.birth_date",nativeQuery = true)
     List<Object> groupByAgeFilterByNameWithoutHql
             (@Param("name") String name);
+    //Yorum satırı
 }
