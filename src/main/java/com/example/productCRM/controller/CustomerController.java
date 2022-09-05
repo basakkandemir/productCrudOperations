@@ -24,28 +24,6 @@ public class CustomerController {
                 ("Başarılı",HttpStatus.CREATED);
     }
 
-    /*
-    [
-    {
-    "name":"Can",
-    "surname":"Kemal",
-    "age":40
-    },{
-    "name":"Can",
-    "surname":"Kemal",
-    "age":40
-},{
-    "name":"Can",
-    "surname":"Kemal",
-    "age":40
-},{
-    "name":"Can",
-    "surname":"Kemal",
-    "age":40
-}
-]
-     */
-    // customer veya product toplu kayıt ekleme endpointi yazılacak.
     @PostMapping("addList")
     public ResponseEntity addListCustomer(@RequestBody List<CustomerDTO>
                                                   customerDTOList){
@@ -71,14 +49,12 @@ public class CustomerController {
     }
 
     // id ye göre customer veya product sorgulama
-    // eğer id yanlış girilmişse bu kayıt yoksa
-    // hata dönmenizi istiyorum.
     @GetMapping("findById")
     public ResponseEntity<CustomerDTO> getCustomerById(@RequestParam(value = "id")
                                        Long id){
         return customerService.getCustomerById(id);
     }
-    // tablodaki toplam kayıt sayısı döndüren methodları yazınız.
+    // tablodaki toplam kayıt sayısı döndüren method
     @GetMapping("allCount")
     public ResponseEntity<Long> getAllCountInCustomer(){
         return new ResponseEntity<>
@@ -116,7 +92,6 @@ public class CustomerController {
         return this.customerService.getByAgeLessThanEqualAndNameIgnoreCase();
     }
 
-    //TODO: Hatalı Çalışıyor.
     @GetMapping("/allCustomerOrderByName")
     public List<CustomerDTO> getAllCustomerOrderByNameDesc(){
         return this.customerService.getAllCustomerOrderByNameDesc();

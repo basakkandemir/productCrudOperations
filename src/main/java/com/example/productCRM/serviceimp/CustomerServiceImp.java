@@ -52,7 +52,6 @@ public class CustomerServiceImp implements CustomerService {
     @Override
     @Transactional
     public void updateCustomer(CustomerDTO customerDTO){
-        //TODO: ilk kayıtı bulalım
         /*
         ID olmasına rağmen güncellemezse?
         Repository e gidip id ye göre filtre çekip
